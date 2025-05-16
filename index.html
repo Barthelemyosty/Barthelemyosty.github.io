@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="fr">
   <head>
@@ -24,7 +23,7 @@
         animation: gradientAnimation 8s ease-in-out infinite;
         color: white;
         text-align: center;
-        padding: 180px 20px 20px; /* Augmenter encore l'espace au-dessus */
+        padding: 180px 20px 20px;
         overflow-x: hidden;
       }
 
@@ -52,7 +51,6 @@
         font-weight: 300;
       }
 
-      /* Projets */
       .project {
         background: rgba(255, 255, 255, 0.1);
         padding: 20px;
@@ -67,12 +65,11 @@
         transform: translateY(30px);
       }
 
-      /* Retour à l'état normal après hover */
       .project:not(:hover) {
-        opacity: 0; /* Opacité de 1 quand l'élément n'est pas survolé */
-        transform: translateY(0); /* L'élément revient à sa position normale */
-        box-shadow: 0px 4px 20px rgba(255, 255, 255, 0.15); /* Lumière faible après le hover */
-        transition: box-shadow 0.5s ease-out, opacity 1s ease-out; /* Transition de disparition de la lumière */
+        opacity: 0;
+        transform: translateY(0);
+        box-shadow: 0px 4px 20px rgba(255, 255, 255, 0.15);
+        transition: box-shadow 0.5s ease-out, opacity 1s ease-out;
       }
 
       .project:hover {
@@ -109,13 +106,12 @@
         box-shadow: 0px 0px 10px rgba(255, 204, 0, 0.8);
       }
 
-      /* Avatar */
       .avatar {
-        position: absolute; /* L'avatar est placé en haut, en dehors du flux normal du contenu */
-        top: 0; /* Position augmentée pour être encore plus haut */
+        position: absolute;
+        top: 0;
         left: 50%;
         transform: translateX(-50%);
-        width: 160px; /* Taille de l'avatar */
+        width: 160px;
         animation: floatAvatar 3s ease-in-out infinite;
         transition: opacity 1s ease, transform 0.5s ease, filter 1s ease;
         z-index: 1000;
@@ -134,18 +130,16 @@
       }
 
       .avatar:hover {
-        filter: brightness(1.05); /* Effet lumineux diminué */
-        transform: translateX(-50%) translateY(0) scale(1.2); /* Zoom accentué */
+        filter: brightness(1.05);
+        transform: translateX(-50%) translateY(0) scale(1.2);
       }
 
-      /* Animation de dégradé animé */
       body {
         background: linear-gradient(45deg, #b43de4, #010864);
         background-size: 300% 300%;
         animation: gradientAnimation 8s ease-in-out infinite;
       }
 
-      /* Animation de l'apparition des projets */
       .project {
         opacity: 0;
         transform: translateY(20px);
@@ -168,28 +162,37 @@
 
     <h1>Bienvenue sur mon Portfolio</h1>
     <h3>
-      Je suis Barthélémy Osty, un élève de 2nd passionné de jeux vidéos, et
-      d'informatique en général. Je suis actuellement en plein apprentissage des
-      langages Python, et HTML (j'ai aussi déjà un peu touché au Lua, et CSS).
-      Voici certains de mes projets expérimentaux que j'ai réalisés:
+      Je suis Barthélémy Osty, un élève de seconde passionné par les jeux vidéo et l'informatique. Actuellement, j'apprends les langages Python et HTML, et j'ai également exploré Lua et CSS. Voici quelques-uns de mes projets expérimentaux :
     </h3>
+
+    <div class="project">
+      <h2>ULTIMATE TIC TAC TOE</h2>
+      <h4>
+        Ultimate Tic Tac Toe est une version sophistiquée du classique jeu de morpion. Ce jeu se déroule sur une grille de 3x3 de grilles de morpion, où chaque case d'une grille est elle-même une grille de morpion. L'objectif est de remporter des grilles individuelles pour finalement dominer la grille globale.
+      </h4>
+      <img
+        src="https://raw.githubusercontent.com/Barthelemyosty/ressources/refs/heads/main/Ultimate%20tic%20tac%20toe%20screen.jpg"
+        alt="visuel Ultimate Tic Tac Toe"
+      />
+      <h4>
+        Ce projet m'a permis d'acquérir des compétences en intelligence artificielle avec Java, de créer un mini-jeu en Java, de développer un site web, et de maîtriser CSS, entre autres.
+      </h4>
+      <a href="https://purring-glow-laugh.glitch.me/" class="btn"
+        >Jouer maintenant</a
+      >
+    </div>
 
     <div class="project">
       <h2>New Super Mario Bros Mod Pack</h2>
       <h4>
-        Ce mod a pour but de créer un remake DS du premier Super Mario
-        Bros. Ce projet est encore en développement mais permet déjà de
-        redécouvrir le début de ce titre dans une version modernisée, et avec de
-        nouvelles méchaniques exclusives à la DS.
+        Ce mod vise à recréer un remake DS du premier Super Mario Bros. Bien que ce projet soit encore en développement, il permet déjà de redécouvrir le début de ce titre dans une version modernisée, avec de nouvelles mécaniques exclusives à la DS.
       </h4>
       <img
         src="https://images.gamebanana.com/img/ss/mods/6732137c0ad1a.jpg"
         alt="visuel mod"
       />
       <h4>
-        Ce projet m’a permis de comprendre la structure d’un jeu vidéo et de
-        manipuler divers éléments comme le level design, les textures, le code,
-        ...
+        Ce projet m’a permis de comprendre la structure d’un jeu vidéo et de manipuler divers éléments comme le level design, les textures, le code, etc.
       </h4>
       <a href="https://gamebanana.com/mods/555020" class="btn"
         >Télécharger le mod</a
@@ -199,15 +202,13 @@
     <div class="project">
       <h2>Roblox War</h2>
       <h4>
-        Ce jeu est un fps multijoueur qui oppose deux teams sur un terrain. J'ai
-        essayé pour ce projet de faire le plus de choses possible par moi-même,
-        sans utiliser les éléments mis à disposition par le moteur de Roblox.
+        Ce jeu est un FPS multijoueur qui oppose deux équipes sur un terrain. J'ai tenté, pour ce projet, de réaliser le plus de choses possible par moi-même, sans utiliser les éléments mis à disposition par le moteur de Roblox.
       </h4>
       <img
         src="https://tr.rbxcdn.com/180DAY-7aaee9ca5566fda46b3b82d643dc3f35/768/432/Image/Webp/noFilter"
         alt="visuel FPS Roblox"
       />
-      <h4>Avec ce projet, j'ai pu apprendre quelques bases en Lua.</h4>
+      <h4>Grâce à ce projet, j'ai pu apprendre les bases de Lua.</h4>
       <a
         href="https://www.roblox.com/fr/games/16789685662/Roblox-War"
         class="btn"
@@ -218,14 +219,14 @@
     <div class="project">
       <h2>UNOLINGO</h2>
       <h4>
-        C'est un "custom launcher" pour Duolingo qui permet de lancer des scripts d'automatisation sur mobile. Grâce à ça, le temps estimé pour faire ses leçons journalières est de quelques secondes. Ainsi, plus besoin de se soucier de la conservation de sa "streak". Cet appli est pour l'instant uniquement disponible sur Android. Un système de notifications journalières est aussi intégré au "launcher", s'adaptant à la langue du système.
+        Il s'agit d'un "custom launcher" pour Duolingo qui permet de lancer des scripts d'automatisation sur mobile. Grâce à cela, le temps estimé pour faire ses leçons journalières est réduit à quelques secondes. Ainsi, plus besoin de se soucier de la conservation de sa "streak". Cette application est pour l'instant uniquement disponible sur Android. Un système de notifications journalières est également intégré au "launcher", s'adaptant à la langue du système.
       </h4>
       <img
         src="https://github.com/Barthelemyosty/ressources/blob/main/minia%20unolingo%202.jpg?raw=true"
         alt="visuel unolingo"
       />
       <h4>
-        J’ai bien aimé automatiser les notifications par mes propres moyens pour premièrement: comprendre leur fonctionnement mais aussi avoir une maîtrise complète sur mon application.
+        J’ai particulièrement apprécié automatiser les notifications par mes propres moyens pour comprendre leur fonctionnement et avoir une maîtrise complète sur mon application.
       </h4>
       <a
         href="https://www.mediafire.com/file/cppel48zt1zl4yt/Unolingo_v5.apk/file"
@@ -236,12 +237,10 @@
 
     <h1>À propos de moi</h1>
     <h3>
-      Je suis actuellement à la recherche d’un stage dans un studio de jeu vidéo
-      à Paris, ou sinon plus généralement dans le domaine informatique.
+      Je suis actuellement à la recherche d’un stage dans un studio de jeu vidéo à Paris, ou plus généralement dans le domaine informatique.
     </h3>
 
     <script>
-      // Animation d'apparition des projets avec IntersectionObserver
       document.addEventListener("DOMContentLoaded", function () {
         let projects = document.querySelectorAll(".project");
         let observer = new IntersectionObserver(
@@ -257,7 +256,6 @@
         projects.forEach((project) => observer.observe(project));
       });
 
-      // Disparition de l'avatar lors du scroll
       window.addEventListener("scroll", function () {
         const avatar = document.getElementById("avatar");
         if (window.scrollY > 50) {
