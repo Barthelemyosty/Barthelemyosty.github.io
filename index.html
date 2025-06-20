@@ -24,7 +24,6 @@
             --hover-transform: translateY(-8px);
         }
 
-        /* Loading Animation */
         .loading-screen {
             position: fixed;
             top: 0;
@@ -130,7 +129,6 @@
             --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
         }
 
-        /* Animation pour le fondu */
         .fade-in {
             animation: fadeIn 0.5s ease-in-out forwards;
         }
@@ -800,7 +798,6 @@
             .arrow.left {
                 left: -50px;
             }
-
             .arrow.right {
                 right: -50px;
             }
@@ -810,68 +807,54 @@
             .theme-toggle {
                 display: none;
             }
-
             .logo-container, .loading-logo-container {
                 width: 150px;
                 height: 150px;
             }
-
             .nav-links {
                 flex-wrap: wrap;
                 justify-content: center;
             }
-
             .nav-links li {
                 margin: 0.3rem;
             }
-
             .nav-links li a {
                 padding: 0.5rem 0.8rem;
                 font-size: 0.9rem;
             }
-
             section {
                 padding: 5.5rem 1rem 2rem;
             }
-
             .section-title {
                 font-size: 2rem;
             }
-
             .content-container {
                 padding: 1.5rem;
             }
-
             .arrow {
                 display: none !important;
             }
-
             .mobile-arrows {
                 display: flex;
             }
-
             .gallery-image-container {
                 width: 100%;
                 max-width: 350px;
                 height: 250px;
                 margin-bottom: 1rem;
             }
-
             .features {
                 flex-direction: column;
                 align-items: center;
                 gap: 1.5rem;
             }
-
             .feature {
                 width: 90%;
                 max-width: 350px;
             }
-
             .social-links {
                 gap: 1.5rem;
             }
-
             .social-links a {
                 width: 40px;
                 height: 40px;
@@ -885,7 +868,7 @@
         <div class="loading-content">
             <div class="loading-logo-container">
                 <div class="loading-logo">
-                    <img src="https://www.formation-montage-video.com/images/Ressourcesimage0/1629-1700818546-1_2/monteur-video-qui-travaille-sur-un-montage-video.jpg" alt="Loading Logo">
+                    <img src="https://github.com/Barthelemyosty/ressources/blob/main/avatar%20portfolio.png?raw=true" alt="Loading Logo">
                 </div>
             </div>
             <div class="loading-text">Loading Portfolio...</div>
@@ -894,7 +877,6 @@
             </div>
         </div>
     </div>
-
     <header>
         <nav>
             <ul class="nav-links">
@@ -905,31 +887,29 @@
             <button class="theme-toggle" onclick="toggleTheme(event)"><i class="fas fa-moon"></i> Dark Mode</button>
         </nav>
     </header>
-
     <section id="about" class="hero">
         <div class="logo-container">
             <div class="logo">
-                <img src="https://www.formation-montage-video.com/images/Ressourcesimage0/1629-1700818546-1_2/monteur-video-qui-travaille-sur-un-montage-video.jpg" alt="Clément Dubois Logo">
+                <img src="https://github.com/Barthelemyosty/ressources/blob/main/avatar%20portfolio.png?raw=true" alt="Barthélémy Osty Logo">
             </div>
         </div>
-        <h1 class="section-title">Clément Dubois</h1>
-        <h2 style="font-family: 'Poppins', sans-serif; font-size: 1.5rem; margin-bottom: 2rem; font-weight: 400; opacity: 0.9;">Professional Video Editor & Thumbnail Creator</h2>
+        <h1 class="section-title">Barthélémy Osty</h1>
+        <h2 style="font-family: 'Poppins', sans-serif; font-size: 1.5rem; margin-bottom: 2rem; font-weight: 400; opacity: 0.9;">Passionate Game Developer</h2>
         <div class="image-container">
-            <img src="https://www.afcinema.com/local/cache-vignettes/L720xH479/48a4cecafaa849bf8225fb1748dcab-ffca1.jpg?1747384598" alt="Video Editing Workspace">
+            <img src="https://raw.githubusercontent.com/Barthelemyosty/ressources/refs/heads/main/Ultimate%20tic%20tac%20toe%20screen.jpg" alt="Game Development Workspace">
         </div>
         <div class="content-container">
-            <p>Welcome to the professional portfolio of Clément Dubois, a skilled video editor and video thumbnail creator. With a passion for storytelling and visual aesthetics, Clément specializes in transforming raw footage into compelling narratives using Adobe Premiere Pro. His expertise as a video thumbnail creator ensures that every project not only tells a story but also captures attention right from the first glance.</p>
+            <p>Welcome to the portfolio of Barthélémy Osty, a high school student passionate about video games and computer science. Currently learning Python and HTML, I have also explored Lua and CSS. I am looking for an internship in a video game studio in Paris or more generally in the field of computer science.</p>
         </div>
-        <button class="glow-button">
+        <button class="glow-button" onclick="window.location.href='mailto:your-email@example.com'">
             <div class="gradient"></div>
             <span>Contact Me</span>
         </button>
     </section>
-
     <section id="projects">
         <div class="logo-container">
             <div class="logo">
-                <img src="https://www.formation-montage-video.com/images/Ressourcesimage0/1629-1700818546-1_2/monteur-video-qui-travaille-sur-un-montage-video.jpg" alt="Clément Dubois Logo">
+                <img src="https://github.com/Barthelemyosty/ressources/blob/main/avatar%20portfolio.png?raw=true" alt="Barthélémy Osty Logo">
             </div>
         </div>
         <h2 class="section-title">My Projects</h2>
@@ -948,44 +928,46 @@
             <div class="gallery-text-container">
                 <p id="gallery-description"></p>
             </div>
+            <button class="glow-button" id="project-link" onclick="window.open(currentProjectUrl, '_blank')">
+                <div class="gradient"></div>
+                <span id="project-link-text">View Project</span>
+            </button>
         </div>
     </section>
-
     <section id="skills">
         <div class="logo-container">
             <div class="logo">
-                <img src="https://www.formation-montage-video.com/images/Ressourcesimage0/1629-1700818546-1_2/monteur-video-qui-travaille-sur-un-montage-video.jpg" alt="Clément Dubois Logo">
+                <img src="https://github.com/Barthelemyosty/ressources/blob/main/avatar%20portfolio.png?raw=true" alt="Barthélémy Osty Logo">
             </div>
         </div>
         <h2 class="section-title">My Skills</h2>
         <div class="content-container">
-            <p>Clément Dubois is not just a video editor; he is a storyteller and a visual artist. With a deep understanding of Adobe Premiere Pro, Clément crafts videos that resonate with audiences. His skills as a video thumbnail creator further enhance his projects, ensuring they stand out in a crowded digital landscape.</p>
+            <p>Barthélémy Osty is not just a game developer; he is a storyteller and a visual artist. With a deep understanding of various programming languages, Barthélémy crafts games that resonate with audiences. His skills as a game developer further enhance his projects, ensuring they stand out in a crowded digital landscape.</p>
         </div>
         <div class="features">
             <div class="feature">
                 <div class="feature-icon">
-                    <i class="fas fa-video"></i>
+                    <i class="fas fa-code"></i>
                 </div>
-                <h3>Premiere Pro</h3>
-                <p>Expertise in Adobe Premiere Pro allows Clément to deliver high-quality video edits with advanced techniques, color correction, and audio mixing for professional-grade results.</p>
+                <h3>Python</h3>
+                <p>Expertise in Python allows Barthélémy to deliver high-quality game logic and advanced techniques for professional-grade results.</p>
             </div>
             <div class="feature">
                 <div class="feature-icon">
-                    <i class="fas fa-image"></i>
+                    <i class="fas fa-gamepad"></i>
                 </div>
-                <h3>Thumbnail Creation</h3>
-                <p>As a video thumbnail creator, Clément designs visually striking thumbnails that enhance viewer engagement and click-through rates, tailored to reflect the video content.</p>
+                <h3>Game Development</h3>
+                <p>As a game developer, Barthélémy designs visually striking games that enhance player engagement and enjoyment, tailored to reflect innovative gameplay.</p>
             </div>
             <div class="feature">
                 <div class="feature-icon">
                     <i class="fas fa-clock"></i>
                 </div>
                 <h3>24/7 Dedication</h3>
-                <p>Clément is committed to his craft, offering round-the-clock dedication to ensure that every project meets the highest standards of quality and creativity.</p>
+                <p>Barthélémy is committed to his craft, offering round-the-clock dedication to ensure that every project meets the highest standards of quality and creativity.</p>
             </div>
         </div>
     </section>
-
     <footer>
         <div class="social-links">
             <a href="https://discord.gg/example" target="_blank" aria-label="Discord"><i class="fab fa-discord"></i></a>
@@ -994,61 +976,46 @@
             <a href="https://instagram.com/example" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
             <a href="https://github.com/example" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
         </div>
-        <p class="copyright">&copy; 2025 Clément Dubois. All rights reserved.</p>
+        <p class="copyright">&copy; 2025 Barthélémy Osty. All rights reserved.</p>
     </footer>
-
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Show loading screen
             const loadingScreen = document.getElementById('loadingScreen');
-
-            // Simulate loading
             setTimeout(function() {
-                // After loading is complete, hide loading screen and initialize the page
                 loadingScreen.style.display = 'none';
-
-                // Initialize the page
                 setActiveTab('about');
                 generateGlowButtons();
                 updateGalleryImage();
-
-                // Animate elements when they come into view
                 const animateOnScroll = () => {
                     const elements = document.querySelectorAll('.feature, .content-container, .image-container, .gallery-text-container');
-
                     elements.forEach(element => {
                         const elementPosition = element.getBoundingClientRect().top;
                         const windowHeight = window.innerHeight;
-
                         if (elementPosition < windowHeight - 100) {
                             element.style.opacity = '1';
                             element.style.transform = 'translateY(0)';
                         }
                     });
                 };
-
                 window.addEventListener('scroll', animateOnScroll);
                 animateOnScroll();
-            }, 3000); // Simulate 3 seconds loading time
+            }, 3000);
         });
+
+        let currentProjectUrl = '';
 
         function setActiveTab(tabId) {
             const tabs = ['about', 'projects', 'skills'];
             tabs.forEach(tab => {
                 const section = document.getElementById(tab);
                 const link = document.querySelector(`a[href="#${tab}"]`);
-
                 if (tab === tabId) {
                     section.style.display = 'flex';
                     if (link) link.classList.add('active');
-
-                    // Animate elements in the active section
                     const elements = section.querySelectorAll('.logo-container, .section-title, .content-container, .glow-button, .image-container, .gallery, .gallery-text-container, .features, .feature');
-
                     elements.forEach((element, index) => {
                         element.style.opacity = '0';
                         element.style.transform = 'translateY(20px)';
-
                         setTimeout(() => {
                             element.style.transition = 'opacity 0.7s ease-out, transform 0.7s ease-out';
                             element.style.opacity = '1';
@@ -1065,40 +1032,41 @@
         let currentImageIndex = 0;
         const images = [
             {
-                src: "https://www.natura-sciences.com/wp-content/uploads/2021/12/documentaire-panthe%CC%80re-neiges-650x465.jpeg",
-                description: "This documentary project captures the essence of wildlife in the Pantheon of Snows, showcasing the beauty and challenges faced by animals in winter landscapes. Clément's editing brings a poignant narrative to life, highlighting the resilience and majesty of nature."
+                src: "https://raw.githubusercontent.com/Barthelemyosty/ressources/refs/heads/main/Ultimate%20tic%20tac%20toe%20screen.jpg",
+                description: "Ultimate Tic Tac Toe est une version améliorée du classique jeu de morpion. Ce jeu se déroule sur une grille de 3x3 de grilles de morpion, où chaque case renvoie le joueur à la grande grille correspondante au prochain tour.",
+                url: "https://purring-glow-laugh.glitch.me/"
             },
             {
-                src: "https://img.youtube.com/vi/wROFZ0JO0Hk/maxresdefault.jpg",
-                description: "This video project delves into the vibrant world of video gaming, capturing the excitement and creativity of game development. Clément's dynamic editing style brings energy and excitement, reflecting the fast-paced and innovative spirit of the gaming industry."
+                src: "https://images.gamebanana.com/img/ss/mods/6732137c0ad1a.jpg",
+                description: "Ce mod vise à recréer un remake DS du premier Super Mario Bros. Bien que ce projet soit encore en développement, il permet déjà de redécouvrir le début de ce titre dans une version modernisée.",
+                url: "https://gamebanana.com/mods/555020"
             },
             {
-                src: "https://www.afcinema.com/local/cache-vignettes/L720xH479/48a4cecafaa849bf8225fb1748dcab-ffca1.jpg?1747384598",
-                description: "A behind-the-scenes look at professional video editing workflows. This project demonstrates Clément's meticulous attention to detail and his ability to transform raw footage into compelling visual stories."
+                src: "https://tr.rbxcdn.com/180DAY-7aaee9ca5566fda46b3b82d643dc3f35/768/432/Image/Webp/noFilter",
+                description: "Ce jeu est un FPS multijoueur qui oppose deux équipes sur un terrain. J'ai tenté, pour ce projet, de réaliser le plus de choses possible par moi-même, sans utiliser les éléments mis à disposition par le moteur de Roblox.",
+                url: "https://www.roblox.com/fr/games/16789685662/Roblox-War"
+            },
+            {
+                src: "https://github.com/Barthelemyosty/ressources/blob/main/minia%20unolingo%202.jpg?raw=true",
+                description: "Il s'agit d'un 'custom launcher' pour Duolingo qui permet de lancer des scripts d'automatisation sur mobile. Grâce à cela, le temps estimé pour faire ses leçons journalières est réduit à quelques secondes.",
+                url: "https://www.mediafire.com/file/cppel48zt1zl4yt/Unolingo_v5.apk/file"
             }
         ];
 
         function updateGalleryImage() {
             const galleryImage = document.getElementById('gallery-image');
             const galleryDescription = document.getElementById('gallery-description');
-
             if (galleryImage && images[currentImageIndex]) {
-                // Ajout de la classe fade-out pour déclencher l'animation de fondu
                 galleryImage.classList.add('fade-out');
                 galleryDescription.classList.add('fade-out');
-
-                // Après l'animation de fondu, on change l'image et la description
                 setTimeout(() => {
                     galleryImage.src = images[currentImageIndex].src;
                     galleryDescription.textContent = images[currentImageIndex].description;
-
-                    // On retire la classe fade-out et on ajoute fade-in
+                    currentProjectUrl = images[currentImageIndex].url;
                     galleryImage.classList.remove('fade-out');
                     galleryDescription.classList.remove('fade-out');
                     galleryImage.classList.add('fade-in');
                     galleryDescription.classList.add('fade-in');
-
-                    // On retire la classe fade-in après l'animation
                     setTimeout(() => {
                         galleryImage.classList.remove('fade-in');
                         galleryDescription.classList.remove('fade-in');
@@ -1123,7 +1091,6 @@
             body.classList.toggle('dark-mode');
             const themeButton = document.querySelector('.theme-toggle');
             const icon = themeButton.querySelector('i');
-
             if (body.classList.contains('dark-mode')) {
                 icon.classList.remove('fa-moon');
                 icon.classList.add('fa-sun');
@@ -1138,7 +1105,6 @@
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
-
                 const targetId = this.getAttribute('href');
                 if (targetId !== '#') {
                     const targetElement = document.querySelector(targetId);
@@ -1155,25 +1121,20 @@
         function generateGlowButtons() {
             document.querySelectorAll(".glow-button").forEach((button) => {
                 let gradientElem = button.querySelector('.gradient');
-
                 if (!gradientElem) {
                     gradientElem = document.createElement("div");
                     gradientElem.classList.add("gradient");
                     button.appendChild(gradientElem);
                 }
-
                 button.addEventListener("pointermove", (e) => {
                     const rect = button.getBoundingClientRect();
-
                     const x = e.clientX - rect.left;
                     const y = e.clientY - rect.top;
-
                     gsap.to(button, {
                         "--pointer-x": `${x}px`,
                         "--pointer-y": `${y}px`,
                         duration: 0.6,
                     });
-
                     gsap.to(button, {
                         "--button-glow": chroma
                             .mix(
