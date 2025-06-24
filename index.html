@@ -560,11 +560,18 @@
             backdrop-filter: blur(5px);
             box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
         }
+        .dark-mode .arrow {
+            background-color: rgba(255, 255, 255, 0.4);
+            color: #000;
+            border: 2px solid rgba(255, 255, 255, 1);
+        }
+        .dark-mode .arrow:hover {
+            background-color: rgba(255, 255, 255, 0.6);
+            color: #000;
+        }
         .arrow:hover {
-            background-color: rgba(255, 255, 255, 1);
             transform: translateY(-50%) scale(1.15);
             box-shadow: var(--hover-shadow);
-            color: var(--accent-color);
         }
         .arrow.left {
             left: -70px;
@@ -700,9 +707,7 @@
             backdrop-filter: blur(5px);
         }
         .mobile-arrow:hover {
-            background-color: rgba(255, 255, 255, 1);
             transform: scale(1.15);
-            color: var(--accent-color);
         }
         @media (max-width: 1024px) {
             .arrow.left {
@@ -868,7 +873,7 @@
             <div class="gallery-text-container">
                 <p id="gallery-description"></p>
             </div>
-            <button class="glow-button" id="project-link" onclick="window.open(currentProjectUrl, '_blank')">
+            <button class="glow-button" id="project-link" onclick="window.open(currentProjectUrl, '_blank')" style="animation: none;">
                 <div class="gradient"></div>
                 <span id="project-link-text">Voir le Projet</span>
             </button>
@@ -951,7 +956,9 @@
                 animateOnScroll();
             }, 3000);
         });
+
         let currentProjectUrl = '';
+
         function setActiveTab(tabId) {
             const tabs = ['about', 'projects', 'skills'];
             tabs.forEach(tab => {
@@ -976,6 +983,7 @@
                 }
             });
         }
+
         let currentImageIndex = 0;
         const images = [
             {
@@ -999,9 +1007,11 @@
                 url: "https://www.mediafire.com/file/cppel48zt1zl4yt/Unolingo_v5.apk/file"
             }
         ];
+
         function updateGalleryImage() {
             const galleryImage = document.getElementById('gallery-image');
             const galleryDescription = document.getElementById('gallery-description');
+            const projectLink = document.getElementById('project-link');
             if (galleryImage && images[currentImageIndex]) {
                 galleryImage.classList.add('fade-out');
                 galleryDescription.classList.add('fade-out');
@@ -1009,6 +1019,7 @@
                     galleryImage.src = images[currentImageIndex].src;
                     galleryDescription.textContent = images[currentImageIndex].description;
                     currentProjectUrl = images[currentImageIndex].url;
+                    document.getElementById('project-link-text').textContent = 'Voir le Projet';
                     galleryImage.classList.remove('fade-out');
                     galleryDescription.classList.remove('fade-out');
                     galleryImage.classList.add('fade-in');
@@ -1020,14 +1031,17 @@
                 }, 500);
             }
         }
+
         function nextImage() {
             currentImageIndex = (currentImageIndex + 1) % images.length;
             updateGalleryImage();
         }
+
         function prevImage() {
             currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
             updateGalleryImage();
         }
+
         function toggleTheme(event) {
             event.preventDefault();
             const body = document.body;
@@ -1041,6 +1055,7 @@
                 text.textContent = 'Mode Sombre';
             }
         }
+
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
@@ -1056,6 +1071,7 @@
                 }
             });
         });
+
         function generateGlowButtons() {
             document.querySelectorAll(".glow-button").forEach((button) => {
                 let gradientElem = button.querySelector('.gradient');
@@ -1084,6 +1100,7 @@
                 });
             });
         }
+
         window.addEventListener('resize', generateGlowButtons);
     </script>
 </body>
