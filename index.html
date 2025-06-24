@@ -12,17 +12,18 @@
         :root {
             --bg-color: #f8f9fa;
             --text-color: #333;
-            --header-bg: linear-gradient(135deg, #000000, #00008B, #4B0082);
+            --header-bg: #ffffff;
             --feature-bg: #ffffff;
             --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-            --primary-color: #4B0082;
-            --secondary-color: #00008B;
-            --accent-color: #009FFD;
+            --primary-color: #000000;
+            --secondary-color: #000000;
+            --accent-color: #000000;
             --transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
             --easing: cubic-bezier(0.25, 0.8, 0.25, 1);
             --hover-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
             --hover-transform: translateY(-8px);
         }
+
         .loading-screen {
             position: fixed;
             top: 0;
@@ -35,10 +36,12 @@
             align-items: center;
             z-index: 9999;
         }
+
         .loading-content {
             text-align: center;
             position: relative;
         }
+
         .loading-logo-container {
             width: 180px;
             height: 180px;
@@ -46,24 +49,28 @@
             position: relative;
             animation: float 8s ease-in-out infinite;
         }
+
         .loading-logo {
             width: 100%;
             height: 100%;
             border-radius: 50%;
             overflow: hidden;
         }
+
         .loading-logo img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             animation: pulse 2s infinite ease-in-out;
         }
+
         .loading-text {
             color: white;
             font-family: 'Poppins', sans-serif;
             font-size: 1.2rem;
             margin-bottom: 1rem;
         }
+
         .progress-container {
             width: 200px;
             height: 4px;
@@ -72,13 +79,15 @@
             margin: 2rem auto 0;
             overflow: hidden;
         }
+
         .progress-bar {
             height: 100%;
-            background: linear-gradient(90deg, #4B0082, #009FFD);
+            background-color: white;
             width: 0%;
             border-radius: 2px;
             animation: progress 3s ease-out forwards;
         }
+
         @keyframes progress {
             0% {
                 width: 0%;
@@ -87,6 +96,7 @@
                 width: 100%;
             }
         }
+
         @keyframes pulse {
             0%, 100% {
                 transform: scale(1);
@@ -95,6 +105,7 @@
                 transform: scale(1.1);
             }
         }
+
         @keyframes float {
             0%, 100% {
                 transform: translateY(0) rotate(0deg);
@@ -109,19 +120,26 @@
                 transform: translateY(-10px) rotate(-1.5deg);
             }
         }
+
         .dark-mode {
-            --bg-color: #121212;
+            --bg-color: #0a0a0a;
             --text-color: #f8f9fa;
-            --header-bg: linear-gradient(135deg, #1a1a1a, #00008B, #4B0082);
-            --feature-bg: #1e1e1e;
-            --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            --header-bg: #121212;
+            --feature-bg: #111111;
+            --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+            --primary-color: #bb86fc;
+            --secondary-color: #3700b3;
+            --accent-color: #03dac6;
         }
+
         .fade-in {
             animation: fadeIn 0.5s ease-in-out forwards;
         }
+
         .fade-out {
             animation: fadeOut 0.5s ease-in-out forwards;
         }
+
         @keyframes fadeIn {
             from {
                 opacity: 0;
@@ -130,6 +148,7 @@
                 opacity: 1;
             }
         }
+
         @keyframes fadeOut {
             from {
                 opacity: 1;
@@ -138,12 +157,7 @@
                 opacity: 0;
             }
         }
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            text-decoration: none !important;
-        }
+
         body {
             font-family: 'Inter', sans-serif;
             margin: 0;
@@ -155,80 +169,65 @@
             line-height: 1.6;
             font-weight: 400;
         }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none !important;
+        }
+
         header {
             background: var(--header-bg);
-            background-size: 300% 300%;
-            color: #fff;
+            color: var(--text-color);
             padding: 1rem 2rem;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            animation: gradientAnimation 15s ease infinite;
             box-shadow: 0 2px 20px rgba(0, 0, 0, 0.15);
-            backdrop-filter: blur(8px);
+            transition: background-color 0.5s, color 0.5s;
         }
-        @keyframes gradientAnimation {
-            0% {
-                background-position: 0% 50%;
-            }
-            50% {
-                background-position: 100% 50%;
-            }
-            100% {
-                background-position: 0% 50%;
-            }
-        }
+
         nav {
             width: 100%;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
+
         .nav-links {
             display: flex;
             list-style: none;
         }
+
         .nav-links li {
             margin: 0 0.5rem;
         }
+
         .nav-links li a {
             font-family: 'Poppins', sans-serif;
             text-decoration: none;
             padding: 0.6rem 1.2rem;
-            border-radius: 2rem;
+            border-radius: 0;
             transition: var(--transition);
             position: relative;
-            color: #fff;
+            color: var(--text-color);
             font-weight: 500;
             font-size: 0.95rem;
+            border-bottom: 2px solid transparent;
         }
+
         .nav-links li a:hover, .nav-links li a.active {
-            background-color: rgba(255, 255, 255, 0.1);
-            transform: translateY(-3px);
-            box-shadow: var(--hover-shadow);
+            border-bottom: 2px solid var(--accent-color);
         }
-        .nav-links li a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            width: 0;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8), transparent);
-            transition: width 0.5s ease, left 0.5s ease;
-            border-radius: 2px;
-        }
-        .nav-links li a:hover::after, .nav-links li a.active::after {
-            width: 60%;
-            left: 20%;
-        }
+
         .theme-toggle {
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(0, 0, 0, 0.1);
             border: none;
-            color: white;
+            color: var(--text-color);
             padding: 0.5rem 1rem;
-            border-radius: 2rem;
+            border-radius: 0;
             cursor: pointer;
             font-family: 'Poppins', sans-serif;
             font-weight: 500;
@@ -236,13 +235,12 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            backdrop-filter: blur(5px);
         }
+
         .theme-toggle:hover {
-            background: rgba(255, 255, 255, 0.15);
-            transform: scale(1.05);
-            box-shadow: var(--hover-shadow);
+            background: rgba(0, 0, 0, 0.15);
         }
+
         section {
             padding: 7rem 2rem 4rem;
             min-height: 100vh;
@@ -252,8 +250,9 @@
             align-items: center;
             text-align: center;
             background-color: var(--bg-color);
-            background-image: radial-gradient(circle at 10% 20%, rgba(75, 0, 130, 0.05) 0%, rgba(0, 0, 130, 0.05) 90%);
+            background-image: radial-gradient(circle at 10% 20%, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.05) 90%);
         }
+
         .logo-container {
             width: 180px;
             height: 180px;
@@ -261,6 +260,7 @@
             position: relative;
             animation: float 8s ease-in-out infinite;
         }
+
         .logo {
             width: 100%;
             height: 100%;
@@ -272,8 +272,13 @@
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
             position: relative;
             overflow: hidden;
-            border: 2px solid rgba(255, 255, 255, 0.2);
+            border: 2px solid rgba(255, 255, 255, 0);
         }
+
+        .dark-mode .logo {
+            border: 2px solid rgba(255, 255, 255, 1);
+        }
+
         .logo img {
             width: 100%;
             height: 100%;
@@ -281,9 +286,11 @@
             border-radius: 50%;
             transition: transform 0.5s ease;
         }
+
         .logo:hover img {
             transform: scale(1.05);
         }
+
         .section-title {
             font-family: 'Poppins', sans-serif;
             font-size: 2.5rem;
@@ -300,6 +307,7 @@
             background-clip: text;
             color: transparent;
         }
+
         .section-title::after {
             content: '';
             position: absolute;
@@ -312,6 +320,7 @@
             border-radius: 2px;
             animation: expandLine 1.2s ease-out forwards;
         }
+
         @keyframes expandLine {
             from {
                 width: 0;
@@ -320,6 +329,7 @@
                 width: 80px;
             }
         }
+
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -330,6 +340,7 @@
                 transform: translateY(0);
             }
         }
+
         .content-container, .gallery-text-container {
             max-width: 900px;
             margin: 1rem auto;
@@ -337,26 +348,30 @@
             background-color: var(--feature-bg);
             border-radius: 16px;
             box-shadow: var(--box-shadow);
-            transition: var(--transition);
+            transition: transform 1s ease, box-shadow 1s ease, border-color 1s ease;
             opacity: 0;
             transform: translateY(20px);
             animation: fadeInUp 0.8s ease-out forwards;
             animation-delay: 0.5s;
             border: 1px solid rgba(0, 0, 0, 0.05);
         }
+
         .content-container:hover, .gallery-text-container:hover {
             transform: var(--hover-transform);
             box-shadow: var(--hover-shadow);
             border-color: rgba(0, 0, 0, 0.1);
         }
+
         .content-container p, .gallery-text-container p {
             font-size: 1.05rem;
             line-height: 1.8;
-            transition: var(--transition);
+            transition: transform 1s ease;
         }
+
         .content-container:hover p, .gallery-text-container:hover p {
             transform: scale(1.02);
         }
+
         .image-container {
             width: 100%;
             max-width: 600px;
@@ -368,36 +383,40 @@
             align-items: center;
             overflow: hidden;
             box-shadow: var(--box-shadow);
-            transition: var(--transition);
+            transition: transform 1s ease, box-shadow 1s ease, border-color 1s ease;
             margin: 1.5rem auto;
             border: 1px solid rgba(0, 0, 0, 0.05);
         }
+
         .image-container:hover {
             transform: var(--hover-transform);
             box-shadow: var(--hover-shadow);
             border-color: rgba(0, 0, 0, 0.1);
         }
+
         .image-container img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.5s var(--easing);
+            transition: transform 1s var(--easing);
         }
+
         .image-container:hover img {
             transform: scale(1.05);
         }
+
         .glow-button {
             --button-background: #09041e;
             --button-color: #fff;
-            --button-shadow: rgba(33, 4, 104, 0.2);
-            --button-shadow-hover: rgba(33, 4, 104, 0.4);
-            --button-shine-left: rgba(120, 0, 245, 0.4);
-            --button-shine-right: rgba(200, 148, 255, 0.5);
-            --button-glow-start: #B000E8;
-            --button-glow-end: #009FFD;
+            --button-shadow: rgba(0, 0, 0, 0.2);
+            --button-shadow-hover: rgba(0, 0, 0, 0.4);
+            --button-shine-left: rgba(0, 0, 0, 0.4);
+            --button-shine-right: rgba(100, 100, 100, 0.5);
+            --button-glow-start: #bb86fc;
+            --button-glow-end: #3700b3;
             --button-border-width: 2px;
-            --button-border-color: rgba(255, 255, 255, 0.2);
-            --button-border-hover-color: rgba(255, 255, 255, 0.3);
+            --button-border-color: rgba(0, 0, 0, 0.2);
+            --button-border-hover-color: rgba(0, 0, 0, 0.3);
             appearance: none;
             outline: none;
             border: none;
@@ -414,9 +433,10 @@
             background: none;
             z-index: 1;
             box-shadow: 0 4px 15px var(--button-shadow);
-            transition: var(--transition);
+            transition: transform 1s ease, box-shadow 1s ease;
             animation: buttonIntro 1.2s var(--easing);
         }
+
         @keyframes buttonIntro {
             0% {
                 opacity: 0;
@@ -430,18 +450,22 @@
                 transform: scale(1);
             }
         }
+
         .glow-button:focus {
             outline: none;
             box-shadow: none;
         }
+
         .glow-button .gradient {
             position: absolute;
             inset: 0;
             border-radius: inherit;
+            overflow: hidden;
             -webkit-mask: radial-gradient(white, black);
             mask: radial-gradient(white, black);
             transform: scaleY(1.03) scaleX(1.01) rotate(-0.35deg);
         }
+
         .glow-button .gradient::before {
             content: '';
             position: absolute;
@@ -454,6 +478,7 @@
             background: linear-gradient(90deg, var(--button-shine-left), var(--button-shine-right));
             animation: rotate linear 4s infinite;
         }
+
         .glow-button span {
             z-index: 1;
             position: relative;
@@ -470,6 +495,7 @@
             transition: border-color 0.5s var(--easing), background-color 0.5s var(--easing), transform 0.5s var(--easing);
             backdrop-filter: blur(4px);
         }
+
         .glow-button span::before {
             content: '';
             position: absolute;
@@ -484,6 +510,7 @@
             transition: opacity var(--button-glow-duration, 0.5s) var(--easing);
             filter: blur(20px);
         }
+
         .glow-button:hover {
             --button-glow-opacity: 1;
             --button-glow-duration: 0.3s;
@@ -492,17 +519,21 @@
             transform: translateY(-4px) scale(1.04);
             background-color: rgba(9, 4, 30, 0.9);
         }
+
         .glow-button:hover span {
             transform: scale(1.05);
         }
+
         .glow-button:hover .gradient::before {
             transform: scale(1.12) translateY(-44px) rotate(0deg);
         }
+
         @keyframes rotate {
             to {
                 transform: scale(1.05) translateY(-44px) rotate(360deg);
             }
         }
+
         .gallery {
             display: flex;
             flex-direction: column;
@@ -511,6 +542,7 @@
             width: 100%;
             max-width: 1000px;
         }
+
         .gallery-container {
             display: flex;
             justify-content: center;
@@ -518,8 +550,9 @@
             margin: 1rem 0;
             position: relative;
             width: 100%;
-            transition: var(--transition);
+            transition: transform 1s ease, box-shadow 1s ease;
         }
+
         .gallery-image-container {
             width: 500px;
             height: 300px;
@@ -530,16 +563,24 @@
             align-items: center;
             overflow: hidden;
             box-shadow: var(--box-shadow);
-            transition: var(--transition);
+            transition: transform 1s ease, box-shadow 1s ease, border-color 1s ease;
             margin: 1.5rem auto;
             border: 1px solid rgba(0, 0, 0, 0.05);
         }
+
+        .gallery-image-container:hover {
+            transform: var(--hover-transform);
+            box-shadow: var(--hover-shadow);
+            border-color: rgba(0, 0, 0, 0.1);
+        }
+
         .gallery-image-container img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             display: block;
         }
+
         .arrow {
             position: absolute;
             top: 50%;
@@ -552,7 +593,7 @@
             border-radius: 50%;
             font-size: 1.5rem;
             z-index: 10;
-            transition: var(--transition);
+            transition: transform 1s ease, background-color 1s ease, box-shadow 1s ease, color 1s ease;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -561,18 +602,22 @@
             backdrop-filter: blur(5px);
             box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
         }
+
         .arrow:hover {
-            background-color: rgba(0, 0, 0, 0.8);
+            background-color: rgba(255, 255, 255, 1);
             transform: translateY(-50%) scale(1.15);
             box-shadow: var(--hover-shadow);
             color: var(--accent-color);
         }
+
         .arrow.left {
             left: -70px;
         }
+
         .arrow.right {
             right: -70px;
         }
+
         .features {
             display: flex;
             justify-content: center;
@@ -582,31 +627,36 @@
             width: 100%;
             max-width: 1200px;
         }
+
         .feature {
             background-color: var(--feature-bg);
             border-radius: 16px;
             padding: 2rem;
             box-shadow: var(--box-shadow);
             width: 300px;
-            transition: var(--transition);
+            transition: transform 1s ease, box-shadow 1s ease, border-color 1s ease;
             text-align: left;
             border: 1px solid rgba(0, 0, 0, 0.05);
         }
+
         .feature:hover {
             transform: var(--hover-transform);
             box-shadow: var(--hover-shadow);
             border-color: rgba(0, 0, 0, 0.1);
         }
+
         .feature-icon {
             font-size: 2.5rem;
             color: var(--accent-color);
             margin-bottom: 1rem;
-            transition: transform 0.5s var(--easing), color 0.5s ease;
+            transition: transform 1s var(--easing), color 1s ease;
         }
+
         .feature:hover .feature-icon {
             transform: scale(1.1) rotate(3deg);
             color: var(--primary-color);
         }
+
         .feature h3 {
             font-family: 'Poppins', sans-serif;
             color: var(--primary-color);
@@ -615,6 +665,7 @@
             position: relative;
             padding-bottom: 0.5rem;
         }
+
         .feature h3::after {
             content: '';
             position: absolute;
@@ -624,38 +675,44 @@
             height: 3px;
             background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
             border-radius: 2px;
-            transition: width 0.5s var(--easing);
+            transition: width 1s var(--easing);
         }
+
         .feature:hover h3::after {
             width: 70px;
         }
+
         .feature p {
             font-size: 1rem;
             line-height: 1.6;
-            transition: transform 0.5s var(--easing);
+            transition: transform 1s var(--easing);
         }
+
         .feature:hover p {
             transform: scale(1.02);
         }
+
         footer {
-            background-color: #121212;
-            color: #fff;
+            background-color: #0a0a0a;
+            color: #f8f9fa;
             text-align: center;
             padding: 3rem 2rem;
             margin-top: 2rem;
             width: 100%;
-            background-image: linear-gradient(135deg, rgba(75, 0, 130, 0.2), rgba(0, 0, 130, 0.2));
+            background-image: linear-gradient(135deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
         }
+
         .social-links {
             margin-bottom: 2rem;
             display: flex;
             justify-content: center;
             gap: 2rem;
         }
+
         .social-links a {
-            color: #fff;
+            color: #f8f9fa;
             font-size: 1.8rem;
-            transition: var(--transition);
+            transition: transform 1s ease, box-shadow 1s ease, border-color 1s ease, color 1s ease;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -667,23 +724,27 @@
             border: 1px solid rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(5px);
         }
+
         .social-links a:hover {
-            color: #fff;
+            color: #f8f9fa;
             transform: translateY(-6px) scale(1.1);
             box-shadow: var(--hover-shadow);
             border-color: rgba(255, 255, 255, 0.2);
         }
+
         .copyright {
             font-size: 0.9rem;
             opacity: 0.8;
             margin-top: 1rem;
         }
+
         .mobile-arrows {
             display: none;
             justify-content: center;
             margin-top: 1rem;
             gap: 2rem;
         }
+
         .mobile-arrow {
             background-color: rgba(0, 0, 0, 0.5);
             color: white;
@@ -697,9 +758,10 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            transition: var(--transition);
+            transition: transform 1s ease, background-color 1s ease, color 1s ease;
             backdrop-filter: blur(5px);
         }
+
         .mobile-arrow:hover {
             background-color: rgba(0, 0, 0, 0.8);
             transform: scale(1.15);
@@ -796,7 +858,9 @@
                 <li><a href="#projects" onclick="setActiveTab('projects')">Projects</a></li>
                 <li><a href="#skills" onclick="setActiveTab('skills')">Skills</a></li>
             </ul>
-            <button class="theme-toggle" onclick="toggleTheme(event)"><i class="fas fa-moon"></i> Dark Mode</button>
+            <button class="theme-toggle" onclick="toggleTheme(event)">
+                <i class="fas fa-moon"></i> Dark Mode
+            </button>
         </nav>
     </header>
     <section id="about" class="hero">
@@ -827,15 +891,23 @@
         <h2 class="section-title">My Projects</h2>
         <div class="gallery">
             <div class="gallery-container">
-                <button class="arrow left" onclick="prevImage()"><i class="fas fa-chevron-left"></i></button>
+                <button class="arrow left" onclick="prevImage()">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
                 <div class="gallery-image-container">
                     <img id="gallery-image" src="" alt="Gallery Image">
                 </div>
-                <button class="arrow right" onclick="nextImage()"><i class="fas fa-chevron-right"></i></button>
+                <button class="arrow right" onclick="nextImage()">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
             </div>
             <div class="mobile-arrows">
-                <button class="mobile-arrow" onclick="prevImage()"><i class="fas fa-chevron-left"></i></button>
-                <button class="mobile-arrow" onclick="nextImage()"><i class="fas fa-chevron-right"></i></button>
+                <button class="mobile-arrow" onclick="prevImage()">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="mobile-arrow" onclick="nextImage()">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
             </div>
             <div class="gallery-text-container">
                 <p id="gallery-description"></p>
@@ -882,11 +954,21 @@
     </section>
     <footer>
         <div class="social-links">
-            <a href="https://discord.gg/example" target="_blank" aria-label="Discord"><i class="fab fa-discord"></i></a>
-            <a href="https://youtube.com/example" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-            <a href="https://twitter.com/example" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-            <a href="https://instagram.com/example" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="https://github.com/example" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://discord.gg/example" target="_blank" aria-label="Discord">
+                <i class="fab fa-discord"></i>
+            </a>
+            <a href="https://youtube.com/example" target="_blank" aria-label="YouTube">
+                <i class="fab fa-youtube"></i>
+            </a>
+            <a href="https://twitter.com/example" target="_blank" aria-label="Twitter">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="https://instagram.com/example" target="_blank" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://github.com/example" target="_blank" aria-label="GitHub">
+                <i class="fab fa-github"></i>
+            </a>
         </div>
         <p class="copyright">&copy; 2025 Barthélémy Osty. All rights reserved.</p>
     </footer>
@@ -913,7 +995,9 @@
                 animateOnScroll();
             }, 3000);
         });
+
         let currentProjectUrl = '';
+
         function setActiveTab(tabId) {
             const tabs = ['about', 'projects', 'skills'];
             tabs.forEach(tab => {
@@ -938,6 +1022,7 @@
                 }
             });
         }
+
         let currentImageIndex = 0;
         const images = [
             {
@@ -961,6 +1046,7 @@
                 url: "https://www.mediafire.com/file/cppel48zt1zl4yt/Unolingo_v5.apk/file"
             }
         ];
+
         function updateGalleryImage() {
             const galleryImage = document.getElementById('gallery-image');
             const galleryDescription = document.getElementById('gallery-description');
@@ -982,14 +1068,17 @@
                 }, 500);
             }
         }
+
         function nextImage() {
             currentImageIndex = (currentImageIndex + 1) % images.length;
             updateGalleryImage();
         }
+
         function prevImage() {
             currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
             updateGalleryImage();
         }
+
         function toggleTheme(event) {
             event.preventDefault();
             const body = document.body;
@@ -1006,6 +1095,7 @@
                 themeButton.innerHTML = '<i class="fas fa-moon"></i> Dark Mode';
             }
         }
+
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
@@ -1021,6 +1111,7 @@
                 }
             });
         });
+
         function generateGlowButtons() {
             document.querySelectorAll(".glow-button").forEach((button) => {
                 let gradientElem = button.querySelector('.gradient');
@@ -1039,22 +1130,17 @@
                         duration: 0.6,
                     });
                     gsap.to(button, {
-                        "--button-glow": chroma
-                            .mix(
-                                getComputedStyle(button)
-                                    .getPropertyValue("--button-glow-start")
-                                    .trim(),
-                                getComputedStyle(button)
-                                    .getPropertyValue("--button-glow-end")
-                                    .trim(),
-                                x / rect.width
-                            )
-                            .hex(),
+                        "--button-glow": chroma.mix(
+                            getComputedStyle(button).getPropertyValue("--button-glow-start").trim(),
+                            getComputedStyle(button).getPropertyValue("--button-glow-end").trim(),
+                            x / rect.width
+                        ).hex(),
                         duration: 0.2,
                     });
                 });
             });
         }
+
         window.addEventListener('resize', generateGlowButtons);
     </script>
 </body>
