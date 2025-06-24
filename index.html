@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Barthélémy Osty | Game Developer Portfolio</title>
+    <title>Barthélémy Osty | Portfolio de Développeur de Jeux</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
@@ -22,6 +22,24 @@
             --easing: cubic-bezier(0.25, 0.8, 0.25, 1);
             --hover-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
             --hover-transform: translateY(-8px);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeOut {
+            from { opacity: 1; }
+            to { opacity: 0; }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.5s ease-in forwards;
+        }
+
+        .fade-out {
+            animation: fadeOut 0.5s ease-out forwards;
         }
 
         .loading-screen {
@@ -132,32 +150,6 @@
             --accent-color: #03dac6;
         }
 
-        .fade-in {
-            animation: fadeIn 0.5s ease-in-out forwards;
-        }
-
-        .fade-out {
-            animation: fadeOut 0.5s ease-in-out forwards;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-
-        @keyframes fadeOut {
-            from {
-                opacity: 1;
-            }
-            to {
-                opacity: 0;
-            }
-        }
-
         body {
             font-family: 'Inter', sans-serif;
             margin: 0;
@@ -227,7 +219,7 @@
             border: none;
             color: var(--text-color);
             padding: 0.5rem 1rem;
-            border-radius: 0;
+            border-radius: 25px;
             cursor: pointer;
             font-family: 'Poppins', sans-serif;
             font-weight: 500;
@@ -235,10 +227,12 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
         }
 
         .theme-toggle:hover {
             background: rgba(0, 0, 0, 0.15);
+            transform: scale(1.05);
         }
 
         section {
@@ -250,7 +244,6 @@
             align-items: center;
             text-align: center;
             background-color: var(--bg-color);
-            background-image: radial-gradient(circle at 10% 20%, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.05) 90%);
         }
 
         .logo-container {
@@ -781,72 +774,79 @@
             .theme-toggle {
                 display: none;
             }
-
             .logo-container, .loading-logo-container {
                 width: 150px;
                 height: 150px;
             }
-
             .nav-links {
                 flex-wrap: wrap;
                 justify-content: center;
             }
-
             .nav-links li {
                 margin: 0.3rem;
             }
-
             .nav-links li a {
                 padding: 0.5rem 0.8rem;
                 font-size: 0.9rem;
             }
-
             section {
                 padding: 5.5rem 1rem 2rem;
             }
-
             .section-title {
                 font-size: 2rem;
             }
-
             .content-container {
                 padding: 1.5rem;
             }
-
             .arrow {
                 display: none !important;
             }
-
             .mobile-arrows {
                 display: flex;
             }
-
             .gallery-image-container {
                 width: 100%;
                 max-width: 350px;
                 height: 250px;
                 margin-bottom: 1rem;
             }
-
             .features {
                 flex-direction: column;
                 align-items: center;
                 gap: 1.5rem;
             }
-
             .feature {
                 width: 90%;
                 max-width: 350px;
             }
-
             .social-links {
                 gap: 1.5rem;
             }
-
             .social-links a {
                 width: 40px;
                 height: 40px;
                 font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo-container, .loading-logo-container {
+                width: 120px;
+                height: 120px;
+            }
+            .section-title {
+                font-size: 1.8rem;
+            }
+            .content-container, .gallery-text-container {
+                padding: 1rem;
+            }
+            .gallery-image-container {
+                max-width: 100%;
+                height: 200px;
+            }
+            .feature {
+                width: 100%;
+                max-width: 100%;
             }
         }
     </style>
@@ -859,7 +859,7 @@
                     <img src="https://github.com/Barthelemyosty/ressources/blob/main/avatar%20portfolio.png?raw=true" alt="Loading Logo">
                 </div>
             </div>
-            <div class="loading-text">Loading Portfolio...</div>
+            <div class="loading-text">Chargement du Portfolio...</div>
             <div class="progress-container">
                 <div class="progress-bar"></div>
             </div>
@@ -868,12 +868,12 @@
     <header>
         <nav>
             <ul class="nav-links">
-                <li><a href="#about" class="active" onclick="setActiveTab('about')">About Me</a></li>
-                <li><a href="#projects" onclick="setActiveTab('projects')">Projects</a></li>
-                <li><a href="#skills" onclick="setActiveTab('skills')">Skills</a></li>
+                <li><a href="#about" class="active" onclick="setActiveTab('about')">À Propos</a></li>
+                <li><a href="#projects" onclick="setActiveTab('projects')">Projets</a></li>
+                <li><a href="#skills" onclick="setActiveTab('skills')">Compétences</a></li>
             </ul>
             <button class="theme-toggle" onclick="toggleTheme(event)">
-                <i class="fas fa-moon"></i> Dark Mode
+                <i class="fas fa-moon"></i> Mode Sombre
             </button>
         </nav>
     </header>
@@ -884,16 +884,13 @@
             </div>
         </div>
         <h1 class="section-title">Barthélémy Osty</h1>
-        <h2 style="font-family: 'Poppins', sans-serif; font-size: 1.5rem; margin-bottom: 2rem; font-weight: 400; opacity: 0.9;">Passionate Game Developer</h2>
-        <div class="image-container">
-            <img src="https://raw.githubusercontent.com/Barthelemyosty/ressources/refs/heads/main/Ultimate%20tic%20tac%20toe%20screen.jpg" alt="Game Development Workspace">
-        </div>
+        <h2 style="font-family: 'Poppins', sans-serif; font-size: 1.5rem; margin-bottom: 2rem; font-weight: 400; opacity: 0.9;">Développeur de Jeux Passionné</h2>
         <div class="content-container">
-            <p>Welcome to the portfolio of Barthélémy Osty, a high school student passionate about video games and computer science. Currently learning Python and HTML, I have also explored Lua and CSS. I am looking for an internship in a video game studio in Paris or more generally in the field of computer science.</p>
+            <p>Bienvenue sur le portfolio de Barthélémy Osty, un lycéen passionné par les jeux vidéo et l'informatique. Actuellement en apprentissage de Python et HTML, j'ai également exploré Lua et CSS. Je recherche un stage dans un studio de jeux vidéo à Paris ou plus généralement dans le domaine de l'informatique.</p>
         </div>
         <button class="glow-button" onclick="window.location.href='mailto:your-email@example.com'">
             <div class="gradient"></div>
-            <span>Contact Me</span>
+            <span>Contactez-moi</span>
         </button>
     </section>
     <section id="projects">
@@ -902,14 +899,14 @@
                 <img src="https://github.com/Barthelemyosty/ressources/blob/main/avatar%20portfolio.png?raw=true" alt="Barthélémy Osty Logo">
             </div>
         </div>
-        <h2 class="section-title">My Projects</h2>
+        <h2 class="section-title">Mes Projets</h2>
         <div class="gallery">
             <div class="gallery-container">
                 <button class="arrow left" onclick="prevImage()">
                     <i class="fas fa-chevron-left"></i>
                 </button>
                 <div class="gallery-image-container">
-                    <img id="gallery-image" src="" alt="Gallery Image">
+                    <img id="gallery-image" src="" alt="Image de la Galerie">
                 </div>
                 <button class="arrow right" onclick="nextImage()">
                     <i class="fas fa-chevron-right"></i>
@@ -928,7 +925,7 @@
             </div>
             <button class="glow-button" id="project-link" onclick="window.open(currentProjectUrl, '_blank')">
                 <div class="gradient"></div>
-                <span id="project-link-text">View Project</span>
+                <span id="project-link-text">Voir le Projet</span>
             </button>
         </div>
     </section>
@@ -938,9 +935,9 @@
                 <img src="https://github.com/Barthelemyosty/ressources/blob/main/avatar%20portfolio.png?raw=true" alt="Barthélémy Osty Logo">
             </div>
         </div>
-        <h2 class="section-title">My Skills</h2>
+        <h2 class="section-title">Mes Compétences</h2>
         <div class="content-container">
-            <p>Barthélémy Osty is not just a game developer; he is a storyteller and a visual artist. With a deep understanding of various programming languages, Barthélémy crafts games that resonate with audiences. His skills as a game developer further enhance his projects, ensuring they stand out in a crowded digital landscape.</p>
+            <p>Barthélémy Osty n'est pas seulement un développeur de jeux, c'est aussi un conteur et un artiste visuel. Avec une compréhension approfondie de divers langages de programmation, Barthélémy crée des jeux qui résonnent avec le public. Ses compétences en tant que développeur de jeux améliorent encore ses projets, garantissant qu'ils se démarquent dans un paysage numérique encombré.</p>
         </div>
         <div class="features">
             <div class="feature">
@@ -948,21 +945,21 @@
                     <i class="fas fa-code"></i>
                 </div>
                 <h3>Python</h3>
-                <p>Expertise in Python allows Barthélémy to deliver high-quality game logic and advanced techniques for professional-grade results.</p>
+                <p>Une expertise en Python permet à Barthélémy de fournir une logique de jeu de haute qualité et des techniques avancées pour des résultats de niveau professionnel.</p>
             </div>
             <div class="feature">
                 <div class="feature-icon">
                     <i class="fas fa-gamepad"></i>
                 </div>
-                <h3>Game Development</h3>
-                <p>As a game developer, Barthélémy designs visually striking games that enhance player engagement and enjoyment, tailored to reflect innovative gameplay.</p>
+                <h3>Développement de Jeux</h3>
+                <p>En tant que développeur de jeux, Barthélémy conçoit des jeux visuellement frappants qui améliorent l'engagement et le plaisir des joueurs, adaptés pour refléter un gameplay innovant.</p>
             </div>
             <div class="feature">
                 <div class="feature-icon">
                     <i class="fas fa-clock"></i>
                 </div>
-                <h3>24/7 Dedication</h3>
-                <p>Barthélémy is committed to his craft, offering round-the-clock dedication to ensure that every project meets the highest standards of quality and creativity.</p>
+                <h3>Dévouement 24/7</h3>
+                <p>Barthélémy est engagé dans son art, offrant un dévouement sans relâche pour garantir que chaque projet répond aux normes les plus élevées de qualité et de créativité.</p>
             </div>
         </div>
     </section>
@@ -984,7 +981,7 @@
                 <i class="fab fa-github"></i>
             </a>
         </div>
-        <p class="copyright">&copy; 2025 Barthélémy Osty. All rights reserved.</p>
+        <p class="copyright">&copy; 2025 Barthélémy Osty. Tous droits réservés.</p>
     </footer>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -1011,7 +1008,6 @@
         });
 
         let currentProjectUrl = '';
-
         function setActiveTab(tabId) {
             const tabs = ['about', 'projects', 'skills'];
             tabs.forEach(tab => {
@@ -1102,11 +1098,11 @@
             if (body.classList.contains('dark-mode')) {
                 icon.classList.remove('fa-moon');
                 icon.classList.add('fa-sun');
-                themeButton.innerHTML = '<i class="fas fa-sun"></i> Light Mode';
+                themeButton.innerHTML = '<i class="fas fa-sun"></i> Mode Clair';
             } else {
                 icon.classList.remove('fa-sun');
                 icon.classList.add('fa-moon');
-                themeButton.innerHTML = '<i class="fas fa-moon"></i> Dark Mode';
+                themeButton.innerHTML = '<i class="fas fa-moon"></i> Mode Sombre';
             }
         }
 
